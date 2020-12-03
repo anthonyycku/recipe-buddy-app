@@ -118,7 +118,6 @@ border: #02755c 5px solid;
 width: 100%;
 padding: 0;
 transition-duration: .2s;
-transition-property: transform;
 }
 .navLink:before {
   position: absolute;
@@ -128,8 +127,7 @@ transition-property: transform;
   width: 100%;
   border-radius: 10px;
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 75%);
-  transition-duration: 0.3s;
-  transition-property: transform, opacity;
+  transition-duration: .3s;
   opacity: 0;
 }
 .navLink:hover{
