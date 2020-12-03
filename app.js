@@ -25,4 +25,13 @@ $(() => {
     }
   })
 
+  //AJAX
+  let query = "https://api.edamam.com/search?app_id=27da4460&app_key=f383bd2a1f9529580b0c88db70d1e990&q=shrimp";
+  $.ajax({
+    url: query,
+    method: "GET",
+  }).then(
+    (data) => {
+      console.log(data.hits);
+    });
 })
