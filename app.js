@@ -34,7 +34,8 @@ $(() => {
     }).then(
       (data) => {
         for (let i = 0; i < data.hits.length; i++) {
-          let newItem = $("<p>").text(data.hits[i].recipe.stuff)
+          let newItem = $("<p>").text(data.hits[i].recipe.ingredients[i].text);
+          console.log(data.hits[i].recipe);
           $(".page").append(newItem);
         }
 
