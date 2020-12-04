@@ -87,7 +87,6 @@ body {
 .nav {
   display: flex;
   font-family: cursive;
-  border-radius: 5px;
 }
 .nav ul {
   width: 100%;
@@ -110,11 +109,13 @@ body {
 .navLink {
 background-color: #d16024;
 display:flex;
-border-radius: 10px;
+border-radius: 5px;
 justify-content: center;
 align-items: center;
 height: 160%;
 border: #02755c 5px solid;
+border-left: none;
+border-right: none;
 width: 100%;
 padding: 0;
 transition-duration: .2s;
@@ -141,7 +142,7 @@ transition-duration: .2s;
   opacity: 1;
 }
 .navLink:hover img {
-    animation: bob 1s ease infinite;
+    animation: bob 1s infinite;
 }
 
 @keyframes bob {
