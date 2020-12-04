@@ -38,7 +38,7 @@ $(() => {
           console.log(data.hits[i].recipe);
           $(".page").append(newItem);
         }
-
+        //a
       });
   }
 
