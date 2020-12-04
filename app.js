@@ -9,12 +9,12 @@ $(() => {
     $(".nav").css("pointer-events", "none");
     setTimeout(() => {
       $(".modal").css("display", "none");
-    }, 1500);
+    }, 1200);
     setTimeout(() => {
       $(".wrapper").css("position", "").css("filter", "");
       $(".nav").css("pointer-events", "");
       window.location = page;
-    }, 1700);
+    }, 1300);
   }
 
   $("body").on("click", ".navLink", (e) => {
@@ -35,12 +35,14 @@ $(() => {
       (data) => {
         for (let i = 0; i < data.hits.length; i++) {
           let newItem = $("<p>").text(data.hits[i].recipe.ingredients[i].text);
-          console.log(data.hits[i].recipe);
           $(".page").append(newItem);
         }
-        //a
       });
   }
+  // RECIPES Page
+  $(".form1").on("click", (e) => {
+    e.preventDefault();
+    getAPI("beef", "frog");
+  })
 
-  getAPI("beef", "ingredients");
 }) // end of jquery
