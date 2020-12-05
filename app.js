@@ -44,7 +44,7 @@ $(() => {
 
         }
       });
-  }
+  } //end of ajax
   // RECIPES Page
   $("input[type='submit']").on("click", (e) => {
     e.preventDefault();
