@@ -45,11 +45,18 @@ $(() => {
         }
       });
   } //end of ajax
+
+
   // RECIPES Page
   $("input[type='submit']").on("click", (e) => {
     e.preventDefault();
     let name = $("input[type='text']").val();
     getAPI(name);
+  })
+
+  $(".results").on("click", ".frame", (e) => {
+    console.log(e.currentTarget);
+    console.log(e.target);
   })
 
 }) // end of jquery

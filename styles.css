@@ -242,6 +242,7 @@ transition-duration: .2s;
 .frameImage {
   width: 100%;
   height: 65%;
+  border-bottom: black solid 3px;
 }
 .frameText {
   padding-top: 8px;
