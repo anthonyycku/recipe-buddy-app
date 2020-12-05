@@ -1,3 +1,11 @@
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 body {
 background-image: url("img/pesto.jpg");
   overflow-x: hidden;
@@ -172,7 +180,7 @@ transition-duration: .2s;
   color: forestgreen;
   font-family:"Papyrus";
 }
-
+/* RECIPES  */
 .page {
   display: grid;
   grid-template-columns: 97%;
@@ -181,12 +189,46 @@ transition-duration: .2s;
     "f1"
     "r"
 }
-.results {
-  border: 5px red solid;
-}
-
 .form1 {grid-area: f1;}
 .results {grid-area: r}
+
+.form1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form1 input {
+  height: 30px;
+  width: 20%;
+}
+.form1 input[type="text"] {
+  width: 30%;
+  margin-bottom: 10px;
+  font-weight: 350;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 4px 0px;
+  border-radius: 10px;
+  min-width: 250px;
+  text-align: center;
+}
+.form1 input[type="submit"] {
+  padding:5px 15px;
+    background:#ccc;
+    border:0 none;
+    cursor:pointer;
+    border-radius: 5px;
+    border-radius: 5px;
+}
+.form1 input[type="submit"]:hover {
+  background: lightgrey;
+}
+
+.results {
+  border: 5px red solid;
+  display: flex;
+  justify-content: space-around;
+}
+
+
 
 
 
@@ -234,5 +276,9 @@ transition-duration: .2s;
   }
   .page {
     margin-top: 40px;
+  }
+ .form1 input[type="text"] {
+    height: 30px;
+    width: 80%;
   }
 }

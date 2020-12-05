@@ -26,7 +26,7 @@ $(() => {
   })
 
   //AJAX
-  getAPI = (name, stuff) => {
+  getAPI = (name, item) => {
     let query = "https://api.edamam.com/search?app_id=27da4460&app_key=f383bd2a1f9529580b0c88db70d1e990&q=" + name;
     $.ajax({
       url: query,
@@ -35,14 +35,15 @@ $(() => {
       (data) => {
         for (let i = 0; i < data.hits.length; i++) {
           let newItem = $("<p>").text(data.hits[i].recipe.ingredients[i].text);
-          $(".page").append(newItem);
+          $(".results").append(newItem);
         }
       });
   }
   // RECIPES Page
-  $(".form1").on("click", (e) => {
+  $("input[type='submit']").on("click", (e) => {
     e.preventDefault();
-    getAPI("beef", "frog");
+    let name = $("input[type='text']").val();
+    getAPI(name, "ingredients");
   })
 
 }) // end of jquery
