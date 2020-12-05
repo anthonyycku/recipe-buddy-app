@@ -33,9 +33,15 @@ $(() => {
       method: "GET",
     }).then(
       (data) => {
+        $(".results").empty();
         for (let i = 0; i < data.hits.length; i++) {
-          let newItem = $("<p>").text(data.hits[i].recipe.ingredients[i].text);
-          $(".results").append(newItem);
+          let frame = $("<div class='frame'>");
+          let frameImage = $("<img class='frameImage'>").attr("src", data.hits[i].recipe.image);
+          let frameText = $("<div class='frameText'>").text(data.hits[i].recipe.label);
+          frame.append(frameImage);
+          frame.append(frameText);
+          $(".results").append(frame);
+
         }
       });
   }
@@ -43,7 +49,7 @@ $(() => {
   $("input[type='submit']").on("click", (e) => {
     e.preventDefault();
     let name = $("input[type='text']").val();
-    getAPI(name, "ingredients");
+    getAPI(name);
   })
 
 }) // end of jquery
