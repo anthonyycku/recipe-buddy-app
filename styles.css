@@ -317,6 +317,20 @@ transition-duration: .2s;
   padding: 10px 0 10px 15px;
   color: forestgreen;
   font-family:"Papyrus";
+>>>>>>> 0aa78a0ae4c2a7662bc501e3daeaccbd7b8767d5
+}
+
+/* Index Page */
+.indexPage {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #f5ecdc;
+  border-left: 10px #50C878 solid;
+  border-radius: 10px;
+  height: 800px;
+  padding: 10px 0 10px 15px;
+  color: forestgreen;
+  font-family:"Papyrus";
 }
 
 /* MEDIA RESPONSIVE */
