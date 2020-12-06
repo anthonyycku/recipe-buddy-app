@@ -45,6 +45,7 @@ $(() => {
           frame.append(frameText);
           $(".results").append(frame);
 
+          //dictionary
           dictionary[i] = {
             nutrients: data.hits[i].recipe.totalNutrients,
             ingredients: data.hits[i].recipe.ingredients,
