@@ -35,7 +35,6 @@ $(() => {
     }).then(
       (data) => {
         let dictionary = {};
-        console.log(data.hits[0].recipe);
         $(".results").empty();
         for (let i = 0; i < data.hits.length; i++) {
           let frame = $("<div class='frame'>").attr("id", i);
@@ -69,7 +68,7 @@ $(() => {
   //create result items
 
   $(".results").on("click", ".frame", (e) => {
-    let id;
+    let id = $(e.currentTarget).attr("id");
     createResult(id, e);
     //  console.log($(e.currentTarget).children().eq(1).text());
   })
