@@ -25,6 +25,7 @@ $(() => {
     }
   })
 
+
   //AJAX
   getAPI = (name, item) => {
     let query = "https://api.edamam.com/search?app_id=27da4460&app_key=f383bd2a1f9529580b0c88db70d1e990&q=" + name;
@@ -33,15 +34,23 @@ $(() => {
       method: "GET",
     }).then(
       (data) => {
+        let dictionary = {};
         console.log(data.hits[0].recipe);
         $(".results").empty();
         for (let i = 0; i < data.hits.length; i++) {
-          let frame = $("<div class='frame'>");
+          let frame = $("<div class='frame'>").attr("id", i);
           let frameImage = $("<img class='frameImage'>").attr("src", data.hits[i].recipe.image);
           let frameText = $("<div class='frameText'>").text(data.hits[i].recipe.label);
           frame.append(frameImage);
           frame.append(frameText);
           $(".results").append(frame);
+
+          dictionary[i] = {
+            nutrients: data.hits[i].recipe.totalNutrients,
+            ingredients: data.hits[i].recipe.ingredients,
+            source: data.hits[i].recipe.url
+          };
+
 
         }
       });
@@ -61,12 +70,22 @@ $(() => {
     //  console.log($(e.currentTarget).children().eq(1).text());
   })
 
+  //close modal
+  $("body").on("click", ".close", (e) => {
+    $(".resultModal").css("display", "none");
+
+    $(".resultModal").remove();
+  })
+
+  //create modal
   createResult = (id, e) => {
     $("body").append("<div class='resultModal'>");
     $(".resultModal").css("display", "flex");
     $(".resultModal").append($("<div class='insideModal'>"))
 
     $(".insideModal").append($("<div class='modalTitle'>").text($(e.currentTarget).children().eq(1).text()));
+    $(".insideModal").append($("<span class='close'>").html("&times;"));
+
   }
 
 }) // end of jquery

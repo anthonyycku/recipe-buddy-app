@@ -238,6 +238,7 @@ transition-duration: .2s;
   border: 3px gold solid;
   border-radius: 5px;
   margin: 10px 10px 10px 10px;
+  cursor: pointer;
 }
 .frameImage {
   width: 100%;
@@ -264,25 +265,53 @@ transition-duration: .2s;
   z-index: 1;
   top: 0;
   left: 0;
-
+}
+.close {
+  color: white;
+  position: absolute;
+  font-size: 2em;
+  font-weight: bold;
+  left: 1120px;
+  top: 20px;
+}
+.close:hover, .close:focus {
+  cursor: pointer;
+  color: red;
+  text-decoration: none;
 }
 .insideModal {
   width: 500px;
   height: 500px;
-  background-color: #52270c;
+  background-color: #18468f;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
+  border: 4px gold solid;
 }
 .modalTitle {
   width: 100%;
   height: auto;
   border-bottom: gold 3px solid;
   font-family: "papyrus";
-  color: forestgreen;
+  color: white;
   font-size: 2em;
   padding: 5px 0 0 5px;
 }
+.modalFooter {
 
+}
+
+/* Index Page */
+.indexPage {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #f5ecdc;
+  border-left: 10px #50C878 solid;
+  border-radius: 10px;
+  height: 800px;
+  padding: 10px 0 10px 15px;
+  color: forestgreen;
+  font-family:"Papyrus";
+}
 
 
 @media only screen and (max-width: 700px) {
