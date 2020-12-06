@@ -64,6 +64,7 @@ $(() => {
     getAPI(name);
   })
 
+  //create result items
   $(".results").on("click", ".frame", (e) => {
     let id;
     createResult(id, e);
