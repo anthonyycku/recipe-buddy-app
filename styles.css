@@ -267,8 +267,22 @@ transition-duration: .2s;
 
 }
 .insideModal {
-
+  width: 500px;
+  height: 500px;
+  background-color: #52270c;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
+.modalTitle {
+  width: 100%;
+  height: auto;
+  border-bottom: gold 3px solid;
+  font-family: "papyrus";
+  color: forestgreen;
+  font-size: 2em;
+  padding: 5px 0 0 5px;
+}
+
 
 
 @media only screen and (max-width: 700px) {

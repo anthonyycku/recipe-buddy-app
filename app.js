@@ -57,13 +57,16 @@ $(() => {
 
   $(".results").on("click", ".frame", (e) => {
     let id;
-    createResult(id);
+    createResult(id, e);
     //  console.log($(e.currentTarget).children().eq(1).text());
   })
 
-  createResult = (id) => {
+  createResult = (id, e) => {
     $("body").append("<div class='resultModal'>");
     $(".resultModal").css("display", "flex");
+    $(".resultModal").append($("<div class='insideModal'>"))
+
+    $(".insideModal").append($("<div class='modalTitle'>").text($(e.currentTarget).children().eq(1).text()));
   }
 
 }) // end of jquery
