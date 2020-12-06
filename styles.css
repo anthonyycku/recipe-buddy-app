@@ -234,14 +234,16 @@ transition-duration: .2s;
   flex-direction: column;
   align-items: center;
   width: 280px;
-  height: auto;
+  height: 360px;
   border: 3px gold solid;
   border-radius: 5px;
   margin: 10px 10px 10px 10px;
+  cursor: pointer;
 }
 .frameImage {
   width: 100%;
   height: 65%;
+  border-bottom: gold solid 3px;
 }
 .frameText {
   padding-top: 8px;
@@ -252,7 +254,70 @@ transition-duration: .2s;
   justify-content:center;
 }
 
+.resultModal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+.close {
+  font-family: monospace;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  position: relative;
+  top: -258px;
+  left: -15px;
+  background-color: red;
+  border: white 2px solid;
+  width: 20px;
+  text-align: center;
+}
+.close:hover, .close:focus {
+  cursor: pointer;
+  color: green;
+  text-decoration: none;
+}
+.insideModal {
+  width: 500px;
+  height: 500px;
+  background-color: #18468f;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 4px gold solid;
+  padding: 10px;
+}
+.modalTitle {
+  width: 100%;
+  height: auto;
+  border-bottom: gold 3px solid;
+  font-family: "papyrus";
+  color: white;
+  font-size: 2em;
+  padding: 5px 0 0 5px;
+}
+.modalFooter {
 
+}
+
+/* Index Page */
+.indexPage {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #f5ecdc;
+  border-left: 10px #50C878 solid;
+  border-radius: 10px;
+  height: 800px;
+  padding: 10px 0 10px 15px;
+  color: forestgreen;
+  font-family:"Papyrus";
+}
 
 
 @media only screen and (max-width: 700px) {
