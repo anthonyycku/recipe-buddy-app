@@ -267,16 +267,21 @@ transition-duration: .2s;
   left: 0;
 }
 .close {
+  font-family: monospace;
   color: white;
-  position: absolute;
   font-size: 2em;
   font-weight: bold;
-  left: 1120px;
-  top: 20px;
+  position: relative;
+  top: -258px;
+  left: -15px;
+  background-color: red;
+  border: white 2px solid;
+  width: 20px;
+  text-align: center;
 }
 .close:hover, .close:focus {
   cursor: pointer;
-  color: red;
+  color: green;
   text-decoration: none;
 }
 .insideModal {
@@ -286,6 +291,7 @@ transition-duration: .2s;
   overflow-x: hidden;
   overflow-y: auto;
   border: 4px gold solid;
+  padding: 10px;
 }
 .modalTitle {
   width: 100%;

@@ -84,8 +84,7 @@ $(() => {
     $(".resultModal").append($("<div class='insideModal'>"))
 
     $(".insideModal").append($("<div class='modalTitle'>").text($(e.currentTarget).children().eq(1).text()));
-    $(".insideModal").append($("<span class='close'>").html("&times;"));
-
+    $(".resultModal").append($("<div class='close'>").text("X"));
   }
 
 }) // end of jquery
