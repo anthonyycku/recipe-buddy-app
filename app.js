@@ -11,7 +11,7 @@ $(() => {
       $(".modal").css("display", "none");
     }, 1200);
     setTimeout(() => {
-      $(".wrapper").css("position", "").css("filter", "");
+      $(".wrapper").css("filter", "");
       $(".nav").css("pointer-events", "");
       window.location = page;
     }, 1300);
@@ -33,6 +33,7 @@ $(() => {
       method: "GET",
     }).then(
       (data) => {
+        console.log(data.hits[0].recipe);
         $(".results").empty();
         for (let i = 0; i < data.hits.length; i++) {
           let frame = $("<div class='frame'>");
@@ -55,8 +56,14 @@ $(() => {
   })
 
   $(".results").on("click", ".frame", (e) => {
-    console.log(e.currentTarget);
-    console.log(e.target);
+    let id;
+    createResult(id);
+    //  console.log($(e.currentTarget).children().eq(1).text());
   })
+
+  createResult = (id) => {
+    $("body").append("<div class='resultModal'>");
+    $(".resultModal").css("display", "flex");
+  }
 
 }) // end of jquery
