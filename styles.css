@@ -227,6 +227,7 @@ transition-duration: .2s;
   display: flex;
   flex-wrap: wrap;
   overflow-y: scroll;
+  justify-content: center;
 }
 
 .frame {
