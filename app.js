@@ -1,4 +1,6 @@
 $(() => {
+
+  //loading function for animation
   loading = (page) => {
     $(".modal").css({
       "display": "flex",
@@ -17,6 +19,7 @@ $(() => {
     }, 1300);
   }
 
+  //Navigation links
   $("body").on("click", ".navLink", (e) => {
     if ($(e.currentTarget).text() === "Recipes") {
       loading("recipes.html");
@@ -27,8 +30,9 @@ $(() => {
     }
   })
 
-  let dictionary = {};
+
   //AJAX
+  let dictionary = {};
   getAPI = (name, item) => {
     let query = "https://api.edamam.com/search?app_id=27da4460&app_key=f383bd2a1f9529580b0c88db70d1e990&q=" + name;
     $.ajax({
@@ -71,8 +75,6 @@ $(() => {
     let id = $(e.currentTarget).attr("id");
     createResult(id, e);
   })
-
-
 
   //create modal
   createResult = (id, e) => {
