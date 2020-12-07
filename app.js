@@ -22,6 +22,8 @@ $(() => {
       loading("recipes.html");
     } else if ($(e.currentTarget).text() === "Home") {
       loading("index.html");
+    } else if ($(e.currentTarget).text() === "About") {
+      loading("about.html");
     }
   })
 
