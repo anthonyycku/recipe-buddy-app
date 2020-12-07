@@ -7,10 +7,10 @@ button:focus {
 }
 
 body {
-background-image: url("img/pesto.jpg");
+background-image: url("img/spoons.jpg");
   overflow-x: hidden;
   overflow-y: scroll;
-  background-size: contain;
+  background-size: cover;
   display: flex;
   justify-content: center;
 }
@@ -70,7 +70,7 @@ background-image: url("img/pesto.jpg");
 
 }
 .pageTitle h1 {
-  color: orange;
+  color: #FF4F58FF;
   margin: auto;
 }
 .header {
@@ -115,18 +115,19 @@ background-image: url("img/pesto.jpg");
   font-size: 1.5em;
 }
 .navLink {
-background-color: #d16024;
+background-color: #669DB3FF;
 display:flex;
 border-radius: 5px;
 justify-content: center;
 align-items: center;
 height: 160%;
-border: #02755c 5px solid;
+border: #F0F6F7FF 5px solid;
 border-left: none;
 border-right: none;
 width: 100%;
 padding: 0;
 transition-duration: .2s;
+opacity: 0.75;
 }
 .navLink:before {
   position: absolute;
@@ -135,14 +136,14 @@ transition-duration: .2s;
   height: 10px;
   width: 100%;
   border-radius: 10px;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0) 80%);
   transition-duration: .3s;
   opacity: 0;
 }
 .navLink:hover{
   transform: translateY(-10px);
   color: white;
-  border-color: gold;
+  border-color: #FF4F58FF;
 }
 .navLink:hover:before {
   transform:translateY(7px);
@@ -172,8 +173,8 @@ transition-duration: .2s;
 }
 .page {
   margin-top: 10px;
-  background-color: #f5ecdc;
-  border-left: 10px #50C878 solid;
+  background-color: #F0F6F7FF;
+  border-left: 10px #FF4F58FF solid;
   border-radius: 10px;
   height: 800px;
   padding: 10px 0 10px 15px;
@@ -288,7 +289,7 @@ transition-duration: .2s;
 .insideModal {
   width: 500px;
   height: 500px;
-  background-color: #18468f;
+  background-color: #669DB3FF;
   overflow-x: hidden;
   overflow-y: auto;
   border: 4px gold solid;
@@ -310,7 +311,7 @@ transition-duration: .2s;
   margin-top: 10px;
   width: 90%;
   height: 400px;
-  background-color: #76528BFF;
+  background-color: #F0F6F7FF;
 
   display: flex;
   flex-direction: column;
@@ -319,7 +320,7 @@ transition-duration: .2s;
 
 }
 .modalBody p{
-  color: #CBCE91FF;
+  color: #FF4F58FF;
   font-size: 25px;
   font-family: sans-serif;
   padding-left: 10px;
@@ -352,26 +353,12 @@ height: 30px;
 .indexPage {
   display: inline-block;
   margin-top: 10px;
-  background-color: #f5ecdc;
-  border-left: 10px #50C878 solid;
+  background-color: #F0F6F7FF;
+  border-left: 10px #FF4F58FF solid;
   border-radius: 10px;
   height: 800px;
   padding: 10px 0 10px 15px;
-  color: forestgreen;
-  font-family:"Papyrus";
->>>>>>> 0aa78a0ae4c2a7662bc501e3daeaccbd7b8767d5
-}
-
-/* Index Page */
-.indexPage {
-  display: inline-block;
-  margin-top: 10px;
-  background-color: #f5ecdc;
-  border-left: 10px #50C878 solid;
-  border-radius: 10px;
-  height: 800px;
-  padding: 10px 0 10px 15px;
-  color: forestgreen;
+  color: #FF4F58FF;
   font-family:"Papyrus";
 }
 
@@ -408,10 +395,7 @@ height: 30px;
     width: 75%;
     height: 50%;
   }
-  .nav a {
-    border-left: #02755c 3px solid;
-    border-right: #02755c 3px solid;
-  }
+
   .page {
     height: minmax(200px, auto);
     margin: 0;
