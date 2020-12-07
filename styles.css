@@ -292,6 +292,9 @@ transition-duration: .2s;
   overflow-y: auto;
   border: 4px gold solid;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .modalTitle {
   width: 100%;
@@ -302,8 +305,46 @@ transition-duration: .2s;
   font-size: 2em;
   padding: 5px 0 0 5px;
 }
-.modalFooter {
+.modalBody {
+  margin-top: 10px;
+  width: 90%;
+  height: 400px;
+  background-color: #76528BFF;
 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: auto;
+
+}
+.modalBody p{
+  color: #CBCE91FF;
+  font-size: 25px;
+  font-family: sans-serif;
+  padding-left: 10px;
+  margin: 5px 0 5px 0;
+}
+.modalFooter {
+margin-top: 5px;
+width: 99%;
+height: 30px;
+}
+.modalFooter a, .modalFooter a:visited {
+  text-decoration: underline;
+  color: white;
+  margin: 0;
+  display: inline-block;
+  font-family: "papyrus";
+}
+.modalFooter a:hover {
+  color: gold;
+}
+.modalFooter p {
+  display: inline-block;
+  margin-right: 15px;
+  margin-top: 0;
+  color: white;
+  font-family: "papyrus";
 }
 
 /* Index Page */

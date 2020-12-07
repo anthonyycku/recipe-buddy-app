@@ -27,7 +27,7 @@ $(() => {
     }
   })
 
-
+  let dictionary = {};
   //AJAX
   getAPI = (name, item) => {
     let query = "https://api.edamam.com/search?app_id=27da4460&app_key=f383bd2a1f9529580b0c88db70d1e990&q=" + name;
@@ -36,7 +36,7 @@ $(() => {
       method: "GET",
     }).then(
       (data) => {
-        let dictionary = {};
+        dictionary = {};
         $(".results").empty();
         for (let i = 0; i < data.hits.length; i++) {
           let frame = $("<div class='frame'>").attr("id", i);
@@ -59,21 +59,42 @@ $(() => {
   } //end of ajax
 
 
-  // RECIPES Page
+  //Submit function
   $("input[type='submit']").on("click", (e) => {
     e.preventDefault();
     let name = $("input[type='text']").val();
     getAPI(name);
   })
 
-
   //create result items
-
   $(".results").on("click", ".frame", (e) => {
     let id = $(e.currentTarget).attr("id");
     createResult(id, e);
-    //  console.log($(e.currentTarget).children().eq(1).text());
   })
+
+
+
+  //create modal
+  createResult = (id, e) => {
+    $("body").append("<div class='resultModal'>");
+    $(".resultModal").css("display", "flex");
+    $(".resultModal").append($("<div class='insideModal'>"))
+    $(".resultModal").append($("<div class='close'>").text("X"));
+
+    $(".insideModal").append($("<div class='modalTitle'>").text($(e.currentTarget).children().eq(1).text()));
+    $(".insideModal").append($("<div class='modalBody'>"));
+    $(".insideModal").append($("<div class='modalFooter'>"));
+
+    //ingredients
+    let ingredientLength = dictionary[id].ingredients.length;
+    for (let j = 0; j < ingredientLength; j++) {
+      $(".modalBody").append($("<p>").text(dictionary[id].ingredients[j].text));
+    }
+
+    //source
+    $(".modalFooter").append($("<p>").text("Recipe Instructions: "))
+    $(".modalFooter").append($(`<a href = "${dictionary[id].source}">`).text("Here"));
+  }
 
   //close modal
   $("body").on("click", ".close", (e) => {
@@ -81,15 +102,4 @@ $(() => {
 
     $(".resultModal").remove();
   })
-
-  //create modal
-  createResult = (id, e) => {
-    $("body").append("<div class='resultModal'>");
-    $(".resultModal").css("display", "flex");
-    $(".resultModal").append($("<div class='insideModal'>"))
-
-    $(".insideModal").append($("<div class='modalTitle'>").text($(e.currentTarget).children().eq(1).text()));
-    $(".resultModal").append($("<div class='close'>").text("X"));
-  }
-
 }) // end of jquery
