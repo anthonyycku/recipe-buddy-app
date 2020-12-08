@@ -1,3 +1,4 @@
+//jquery
 $(() => {
 
   //loading function for animation
