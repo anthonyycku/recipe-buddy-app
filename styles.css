@@ -443,4 +443,15 @@ right: 30%;
     font-size: 1em;
     height: auto;
   }
+  .tooltipBox {
+  visibility: hidden;
+  background-color: black;
+  border: 1px white solid;
+  width: auto;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  top: 75%;
+  right: 15%;
+  }
 }
