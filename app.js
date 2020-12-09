@@ -96,9 +96,8 @@ $(() => {
     $(".modalFooter").append($("<p>").text("Recipe Instructions: "))
     $(".modalFooter").append($(`<a href = "${dictionary[id].source}">`).text("Here"));
 
-    console.log(dictionary[id].nutrients);
+
     //tooltip
-    //$(".modalFooter").append($("<img src='img/nutrition.png' class='tooltip'>"));
     $(".modalFooter").append($("<img src='img/nutrition.png' class='tooltip'>"));
     $(".insideModal").append($("<div class='tooltipBox'>"));
 
