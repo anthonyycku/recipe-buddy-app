@@ -57,8 +57,6 @@ $(() => {
             ingredients: data.hits[i].recipe.ingredients,
             source: data.hits[i].recipe.url
           };
-
-
         }
       });
   } //end of ajax
@@ -97,6 +95,24 @@ $(() => {
     //source
     $(".modalFooter").append($("<p>").text("Recipe Instructions: "))
     $(".modalFooter").append($(`<a href = "${dictionary[id].source}">`).text("Here"));
+
+    console.log(dictionary[id].nutrients);
+    //tooltip
+    //$(".modalFooter").append($("<img src='img/nutrition.png' class='tooltip'>"));
+    $(".modalFooter").append($("<img src='img/nutrition.png' class='tooltip'>"));
+    $(".insideModal").append($("<div class='tooltipBox'>"));
+
+    $(".tooltipBox").append($("<p class='tooltipText'>").text("Fat: " + Math.floor(dictionary[id].nutrients.FAT.quantity) + dictionary[id].nutrients.FAT.unit));
+    $(".tooltipBox").append($("<p class='tooltipText'>").text("Sugar: " + Math.floor(dictionary[id].nutrients.SUGAR.quantity) + dictionary[id].nutrients.SUGAR.unit));
+    $(".tooltipBox").append($("<p class='tooltipText'>").text("Sodium: " + Math.floor(dictionary[id].nutrients.NA.quantity) + dictionary[id].nutrients.NA.unit));
+
+    $(".tooltip").on("mouseover", () => {
+      $(".tooltipBox").css("visibility", "visible");
+    })
+    $(".tooltip").on("mouseleave", () => {
+      $(".tooltipBox").css("visibility", "hidden");
+    })
+
   }
 
   //close modal
